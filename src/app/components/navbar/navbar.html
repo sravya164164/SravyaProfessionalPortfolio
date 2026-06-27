@@ -1,0 +1,34 @@
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="nav-brand">Sravya Balivada</div>
+
+  <!-- Desktop links -->
+  <ul class="nav-links">
+    @for (item of navItems; track item.fragment) {
+      <li>
+        <a
+          (click)="scrollTo(item.fragment)"
+          [class.active]="activeSection() === item.fragment"
+        >{{ item.label }}</a>
+      </li>
+    }
+  </ul>
+
+  <!-- Hamburger for mobile -->
+  <button class="hamburger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Mobile menu -->
+  @if (menuOpen) {
+    <ul class="mobile-menu">
+      @for (item of navItems; track item.fragment) {
+        <li>
+          <a
+            (click)="scrollTo(item.fragment)"
+            [class.active]="activeSection() === item.fragment"
+          >{{ item.label }}</a>
+        </li>
+      }
+    </ul>
+  }
+</nav>

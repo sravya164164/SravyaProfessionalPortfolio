@@ -1,0 +1,20 @@
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-content">
+      <div class="text-block">
+        <p class="greeting">Hi, my name is</p>
+        <h1 class="name">{{ about.name }}</h1>
+        <h2 class="tagline">{{ about.tagline }}</h2>
+        <p class="bio">{{ about.bio }}</p>
+        <a href="#contact" class="cta-btn" (click)="scrollToContact($event)">
+          Get In Touch
+        </a>
+      </div>
+      <div class="avatar-block">
+        <div class="avatar-ring">
+          <div class="avatar-initials">SB</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
