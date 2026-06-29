@@ -16,6 +16,7 @@ export interface Project {
   tech: string[];
   githubUrl?: string;
   liveUrl?: string;
+  demoVideoUrl?: string; // YouTube embed URL: https://www.youtube.com/embed/YOUR_VIDEO_ID
 }
 
 export interface ContactInfo {
@@ -37,27 +38,37 @@ export class PortfolioService {
   readonly about = {
     name: 'Sravya Balivada',
     tagline: 'Software Engineer · Problem Solver · Lifelong Learner',
-    bio: `Hi! I'm Sravya Balivada, a passionate software engineer who loves building
+    bio: `Hi! I'm Sravya, a passionate software engineer who loves building
           clean, user-friendly applications. I enjoy turning complex problems into
-          simple, elegant solutions.`,
+          simple, elegant solutions. My skills are LangChain , LangGraph , Vector Database 
+          python , Java , Spring Boot , Node.js , Angular , TypeScript , HTML5 , CSS3 / SCSS , 
+          RxJS , Git , GitHub , Docker , AWS , VS Code, MySQL , PostgreSQL , MongoDB, 
+          and promt engineering . 
+          
+          I'm always eager to learn new technologies and improve my craft. Let's connect and 
+          create something amazing together!`
   };
 
   readonly skills: Skill[] = [
     {
-      category: 'Frontend',
-      items: ['Angular', 'TypeScript', 'HTML5', 'CSS3 / SCSS', 'RxJS'],
+      category: 'AI Skills',
+      items: ['LangChain', 'LangGraph'],
+    },
+    {
+      category: 'Databases',
+      items: ['MySQL', 'PostgreSQL', 'MongoDB'],
     },
     {
       category: 'Backend',
       items: ['Java', 'Spring Boot', 'Node.js', 'REST APIs'],
     },
     {
-      category: 'Tools & Cloud',
-      items: ['Git', 'GitHub', 'Docker', 'AWS', 'VS Code'],
+      category: 'Frontend',
+      items: ['Angular', 'TypeScript', 'HTML5', 'CSS3 / SCSS', 'RxJS'],
     },
     {
-      category: 'Databases',
-      items: ['MySQL', 'PostgreSQL', 'MongoDB'],
+      category: 'Tools & Cloud',
+      items: ['Git', 'GitHub', 'Docker', 'AWS', 'VS Code'],
     },
   ];
 
@@ -70,8 +81,9 @@ export class PortfolioService {
     },
     {
       title: 'Project Two',
-      description: 'Description of your second project goes here.',
+      description: 'This is AI Doc agent that takes a pdf and answers accordingly.',
       tech: ['Java', 'Spring Boot', 'MySQL'],
+      demoVideoUrl: 'https://www.youtube.com/embed/dsnlOMgR158',
     },
     {
       title: 'Project Three',
@@ -82,7 +94,6 @@ export class PortfolioService {
 
   readonly contact: ContactInfo = {
     email: 'sravya164164@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/sravya-balivada',
     github: 'https://github.com/sravya164164',
   };
 

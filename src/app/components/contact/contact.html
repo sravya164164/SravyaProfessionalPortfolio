@@ -17,19 +17,6 @@
         <span>{{ contact.email }}</span>
       </a>
 
-      @if (contact.linkedin) {
-        <a [href]="contact.linkedin" target="_blank" rel="noopener" class="contact-item">
-          <span class="contact-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-          </span>
-          <span>LinkedIn</span>
-        </a>
-      }
-
       @if (contact.github) {
         <a [href]="contact.github" target="_blank" rel="noopener" class="contact-item">
           <span class="contact-icon">
@@ -50,6 +37,6 @@
       }
     </div>
 
-    <a [href]="'mailto:' + contact.email" class="cta-btn">Say Hello</a>
+    <a [href]="'mailto:' + contact.email" class="cta-btn">Send Email</a>
   </div>
 </section>

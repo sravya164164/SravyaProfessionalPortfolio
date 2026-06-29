@@ -10,7 +10,6 @@
             <div class="card-links">
               @if (project.githubUrl) {
                 <a [href]="project.githubUrl" target="_blank" rel="noopener" title="GitHub" class="icon-link">
-                  <!-- GitHub SVG -->
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
                     0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756
@@ -33,6 +32,13 @@
                   </svg>
                 </a>
               }
+              @if (project.demoVideoUrl) {
+                <button (click)="openVideo(project.demoVideoUrl!)" class="icon-link video-btn" title="Watch Demo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              }
             </div>
           </div>
 
@@ -44,8 +50,40 @@
               <span class="tag">{{ tech }}</span>
             }
           </div>
+
+          @if (project.demoVideoUrl) {
+            <button class="demo-btn" (click)="openVideo(project.demoVideoUrl!)">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Watch Demo
+            </button>
+          }
         </div>
       }
     </div>
   </div>
 </section>
+
+<!-- Video Modal -->
+@if (activeVideoUrl()) {
+  <div class="modal-overlay" (click)="closeVideo()">
+    <div class="modal-box" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeVideo()" aria-label="Close video">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="video-wrapper">
+        <iframe
+          [src]="activeVideoUrl()!"
+          frameborder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+          title="Project Demo">
+        </iframe>
+      </div>
+    </div>
+  </div>
+}

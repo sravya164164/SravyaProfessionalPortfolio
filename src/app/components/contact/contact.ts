@@ -1,11 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
