@@ -60,7 +60,7 @@ export class PortfolioService {
     },
     {
       category: 'Backend',
-      items: ['Java', 'Spring Boot', 'Node.js', 'REST APIs'],
+      items: ['Java', 'Spring Boot', 'Node.js', 'REST APIs', 'Python'],
     },
     {
       category: 'Frontend',
